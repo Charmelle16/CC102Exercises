@@ -22,42 +22,57 @@ int main() {
 
             sales[prod-1][sp-1] += amt;
 
-            cout << "Do you want to enter another sales slip? (y/n): ";
+            cout << "Enter another sales slip? (y/n): ";
             cin >> choice;
 
         } while (choice == 'y' || choice == 'Y');
 
-        cout << "\nProduct\t1\t2\t3\t4\tTotal\n";
+        cout << fixed << setprecision(2);
+
+        // Header
+        cout << "\n-----------------------------------------------------------\n";
+        cout << setw(10) << "Product";
+        cout << setw(10) << "1"
+             << setw(10) << "2"
+             << setw(10) << "3"
+             << setw(10) << "4"
+             << setw(10) << "Total\n";
+        cout << "-----------------------------------------------------------\n";
 
         double grandTotal = 0;
 
         // Row totals (per product)
         for (int i = 0; i < 5; i++) {
             double rowTotal = 0;
-            cout << i+1 << "\t";
+
+            cout << setw(10) << i + 1;
 
             for (int j = 0; j < 4; j++) {
-                cout << fixed << setprecision(2) << sales[i][j] << "\t";
+                cout << setw(10) << sales[i][j];
                 rowTotal += sales[i][j];
             }
 
-            cout << rowTotal << endl;
+            cout << setw(10) << rowTotal << endl;
             grandTotal += rowTotal;
         }
 
-        // Column totals (per salesperson)
-        cout << "Total\t";
+        cout << "-----------------------------------------------------------\n";
+
+        // Column totals
+        cout << setw(10) << "Total";
+
         for (int j = 0; j < 4; j++) {
             double colTotal = 0;
             for (int i = 0; i < 5; i++) {
                 colTotal += sales[i][j];
             }
-            cout << colTotal << "\t";
+            cout << setw(10) << colTotal;
         }
 
-        cout << grandTotal << endl;
+        cout << setw(10) << grandTotal << endl;
+        cout << "-----------------------------------------------------------\n";
 
-        cout <<"\nDo you want to enter another sales slip? (y/n): ";
+        cout << "\nRun program again? (y/n): ";
         cin >> again;
 
     } while (again == 'y' || again == 'Y');

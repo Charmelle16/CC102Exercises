@@ -43,12 +43,14 @@ int main() {
 
     while (getline(readFile, line)) {
         copyFile << line << endl;
+        cout << line << endl;
     }
 
     readFile.close();
     copyFile.close();
 
     cout << "File copied successfully." << endl;
+    
 
     return 0;
 }

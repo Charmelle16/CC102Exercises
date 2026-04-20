@@ -52,11 +52,12 @@ int main() {
 
     for (string word : words) {
         sortedFile << word << endl;
+        cout << word << endl;
     }
 
     sortedFile.close();
 
-    cout <<  "Sorting complete. Check sorted.txt" << endl;
+    cout <<  "\nSorting complete. Check sorted.txt" << endl;
 
     return 0;
 }

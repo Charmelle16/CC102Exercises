@@ -49,7 +49,7 @@ int main() {
     readFile.close();
     copyFile.close();
 
-    cout << "File copied successfully." << endl;
+    cout << "\nFile copied successfully." << endl;
     
 
     return 0;
